@@ -40,8 +40,19 @@
 
 ;; run emacs in full screen
 (require 'maxframe)
-(setq mf-max-width 1280)  ;; Pixel width of main monitor.
-(setq mf-max-height 720)  ;; Pixel width of main monitor.
+
+
+(when (eq system-type 'darwin)
+  (when (string= user-login-name "hera")
+    (setq mf-max-width 1280)  ;; Pixel width of main monitor.
+    (setq mf-max-height 720))  ;; Pixel width of main monitor.
+  (when (string= user-login-name "yhe1")
+    (setq mf-max-width 1900)  ;; Pixel width of main monitor.
+    (setq mf-max-height 1000))  ;; Pixel width of main monitor.)
+    )
+
+
+
 (defvar my-fullscreen-p t "Check if fullscreen is on or off")
 (defun my-toggle-fullscreen ()
   (interactive)
