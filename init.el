@@ -67,3 +67,4 @@
 
 (setq server-use-tcp t)
 (server-start)
+(put 'upcase-region 'disabled nil)

@@ -13,3 +13,4 @@ eshell
 /server/server
 /auctex/auto/*.el
 /auctex/math.tex
+/tramp
