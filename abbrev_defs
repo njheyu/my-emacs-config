@@ -33,8 +33,6 @@
 
 (define-abbrev-table 'global-abbrev-table '(    ("8alr" "read.table(\"/home/yu/Library/R/alr3/extdata/water.txt\",
                     header=TRUE)" nil 1)
-    ("gemail" "hera.yu.he@gmail.com" nil 4)
-    ("semail" "yhe1@stanford.edu" nil 1)
     ))
 
 (define-abbrev-table 'gnus-article-edit-mode-abbrev-table '(    ))
@@ -74,9 +72,9 @@
 #+LATEX_HEADER: %\\setCJKmonofont{Adobe Fangsong Std}  
 #+LATEX_HEADER: %\\setmainfont{Adobe Song Std}
 #+LATEX_HEADER: %\\setromanfont{SimSun}
-#+LATEX_HEADER: %\\setromanfont{�΢����ő��}
-#+LATEX_HEADER: %\\setromanfont{��đȪ��������}
-#+LATEX_HEADER: \\setromanfont{��đȪ���΢��ב��}
+#+LATEX_HEADER: %\\setromanfont{‘Î¢‘Èí‘ÑÅ‘ºÚ}
+#+LATEX_HEADER: %\\setromanfont{‘ÎÄ‘Èª‘æä‘Õý‘ºÚ}
+#+LATEX_HEADER: \\setromanfont{‘ÎÄ‘Èª‘æä‘Î¢‘Ã×‘ºÚ}
 #+LATEX_HEADER: %\\setromanfont{Adobe Kaiti Std}
 #+LATEX_HEADER: %\\setromanfont{AR PL UMing CN}
 #+LATEX_HEADER: %\\setromanfont{WenQuanYi Zen Hei}
@@ -133,7 +131,7 @@
 #+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
 
 #+LATEX_HEADER: \\usepackage{xeCJK}
-#+LATEX_HEADER: \\setCJKmainfont{��đȪ��������}
+#+LATEX_HEADER: \\setCJKmainfont{‘ÎÄ‘Èª‘æä‘Õý‘ºÚ}
 #+LATEX_HEADER: \\usepackage[english]{babel}
 #+LATEX_HEADER: \\setbeamercovered{dynamic}           
 #+LATEX_HEADER: \\setbeamertemplate{footline}[frame number]       
@@ -175,9 +173,9 @@
 #+LATEX_HEADER: %\\setCJKmonofont{Adobe Fangsong Std}  
 #+LATEX_HEADER: %\\setmainfont{Adobe Song Std}
 #+LATEX_HEADER: %\\setromanfont{SimSun}
-#+LATEX_HEADER: %\\setromanfont{�΢����ő��}
-#+LATEX_HEADER: %\\setromanfont{��đȪ��������}
-#+LATEX_HEADER: \\setromanfont{��đȪ���΢��ב��}
+#+LATEX_HEADER: %\\setromanfont{‘Î¢‘Èí‘ÑÅ‘ºÚ}
+#+LATEX_HEADER: %\\setromanfont{‘ÎÄ‘Èª‘æä‘Õý‘ºÚ}
+#+LATEX_HEADER: \\setromanfont{‘ÎÄ‘Èª‘æä‘Î¢‘Ã×‘ºÚ}
 #+LATEX_HEADER: %\\setromanfont{Adobe Kaiti Std}
 #+LATEX_HEADER: %\\setromanfont{AR PL UMing CN}
 #+LATEX_HEADER: %\\setromanfont{WenQuanYi Zen Hei}
@@ -186,15 +184,15 @@
 #+LATEX_HEADER:             papersize={82.5mm,110mm}]{geometry}
 #+LATEX_HEADER: \\newlength{\\pagewidth}
 #+LATEX_HEADER: \\newlength{\\pageheight}
-#+LATEX_HEADER: \\setlength\\pagewidth{82.5mm} %��͑ҳ������Ñ��һ���
+#+LATEX_HEADER: \\setlength\\pagewidth{82.5mm} %‘ºÍ‘Ò³‘Ãæ‘Éè‘ÖÃ‘Àï‘Ò»‘ÖÂ
 #+LATEX_HEADER: \\setlength\\pageheight{110mm}
 
 #+LATEX_HEADER: \\setcounter{secnumdepth}{2}
 #+LATEX_HEADER: %\\setlength{\\parskip}{0.05in}
 
-#+AUTHOR:   ��ő��
+#+AUTHOR:   ‘¹Å‘Áú
 #+DATE:     \\today
-#+TITLE:    �����鑽���͑�ޑ�鑽�" nil 0)
+#+TITLE:    ‘¶à‘Çé‘½£‘¿Í‘ÎÞ‘Çé‘½£" nil 0)
     ("8lhd" "
 
 #+LATEX_HEADER: \\def\\pName{Hera Yu He}
