@@ -16,8 +16,8 @@
       (lambda ()
         (setq indent-tabs-mode t)
         (setq tab-width 4)
-        (setq python-indent 4)))
-
+        (setq python-indent 4)
+        (setq electric-indent-chars (delq ?: electric-indent-chars))))
 ;; octave
 ;; autolad octave mode for *.m-files
 (autoload 'octave-mode "octave-mod" nil t)
