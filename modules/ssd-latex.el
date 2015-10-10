@@ -4,7 +4,11 @@
 (load "preview.el" nil t t)
 
 
-;; In skim set preference to be /usr/local/bin/emacsclient -f ~/.emacs.d/server/server
+;; In skim set preference to be /usr/local/bin/emacsclient --no-wait +%line "%file"
+;; In ~/.latexmkrc put the following three lines, otherwise the latexmk will not automatically wrong if there is an error
+;; $pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1 %O %S';
+;; $pdf_previewer = 'open -a skim';
+;; $clean_ext = 'bbl rel %R-blx.bib %R.synctex.gz';
 ;;OS X Madness
 (if (eq system-type 'darwin)
     (progn
@@ -40,6 +44,7 @@
                   TeX-show-compilation t) ; display compilation windows
             (imenu-add-menubar-index)
             (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
+            ;; (define-key LaTeX-mode-map [M-S-mouse-1] 'TeX-view) ; bind CMD + shift + click to run TeX-view
             (define-key LaTeX-mode-map [M-S-mouse-1] 'TeX-view) ; bind CMD + shift + click to run TeX-view
             (auto-fill-mode 1)
             (reftex-mode 1)
@@ -133,3 +138,20 @@
 ;; XeLaTeX
 ;; (setq TeX-open-quote "“")
 ;; (setq TeX-close-quote "”")
+
+;; ;; hahahahahahahh
+;; (add-hook 'LaTeX-mode-hook (lambda ()
+;;   (push
+;;     '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
+;;       :help "Run latexmk on file")
+;;     TeX-command-list)))
+;; (add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
+
+;; ;; use Skim as default pdf viewer
+;; ;; Skim's displayline is used for forward search (from .tex to .pdf)
+;; ;; option -b highlights the current line; option -g opens Skim in the background
+;; (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
+;; (setq TeX-view-program-list
+;;      '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
+
+;; (server-start); start emacs in server mode so that skim can talk to it
