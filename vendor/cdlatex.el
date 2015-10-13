@@ -760,15 +760,39 @@ With arg, insert pair of double dollars."
             (if (bolp) (insert "$$\n") (insert "$$"))
           (insert "$"))))))
 
+;; (defun cdlatex-sub-superscript ()
+;;   "Insert ^{} or _{} unless the number of backslashes before point is odd.
+;; When not in LaTeX math environment, _{} and ^{} will have dollars."
+;;   (interactive)
+;;   (if (cdlatex-number-of-backslashes-is-odd)
+;;       ;; Quoted
+;;       (insert last-command-event)
+;;     ;; Check if we need to switch to math mode
+;;     (if (not (texmathp)) (cdlatex-dollar))
+;;     (if (string= (buffer-substring (max (point-min) (- (point) 2)) (point))
+;;                  (concat (char-to-string last-command-event) "{"))
+;;         ;; We are at the start of a sub/suberscript.  Allow a__{b} and a^^{b}
+;;         ;; This is an undocumented feature, please keep it in.  It supports
+;;         ;; a special notation which can be used for upright sub- and
+;;         ;; superscripts.
+;;         (progn
+;;           (backward-char 1)
+;;           (insert last-command-event)
+;;           (forward-char 1))
+;;       ;; Insert the normal template.
+;;       (insert last-command-event)
+;;       (insert "{}")
+;;       (forward-char -1))))
+
 (defun cdlatex-sub-superscript ()
   "Insert ^{} or _{} unless the number of backslashes before point is odd.
 When not in LaTeX math environment, _{} and ^{} will have dollars."
   (interactive)
-  (if (cdlatex-number-of-backslashes-is-odd)
+  (if (not (texmathp))
       ;; Quoted
       (insert last-command-event)
     ;; Check if we need to switch to math mode
-    (if (not (texmathp)) (cdlatex-dollar))
+    ;; (if (not (texmathp)) (cdlatex-dollar))
     (if (string= (buffer-substring (max (point-min) (- (point) 2)) (point))
                  (concat (char-to-string last-command-event) "{"))
         ;; We are at the start of a sub/suberscript.  Allow a__{b} and a^^{b}
@@ -783,6 +807,8 @@ When not in LaTeX math environment, _{} and ^{} will have dollars."
       (insert last-command-event)
       (insert "{}")
       (forward-char -1))))
+
+
 
 (defun cdlatex-lr-pair ()
   "Insert a \\left-\\right pair of parens."
