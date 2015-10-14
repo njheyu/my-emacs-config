@@ -57,6 +57,8 @@
                          '(98 "\\boldsymbol" "\\textbf" t nil nil))
             (add-to-list 'cdlatex-math-modify-alist
                          '(115 "\\mathbb" nil t nil nil))
+            (add-to-list 'cdlatex-math-modify-alist
+                         '(100 "\\mathds" nil t nil nil))
             (setq cdlatex-math-symbol-prefix 168)
             (setq cdlatex-math-symbol-alist
                   '((?< ("\\leq" "\\leftarrow" "\\min" ))
